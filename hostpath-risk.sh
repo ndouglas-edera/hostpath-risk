@@ -26,7 +26,7 @@ step() {
 
 cleanup() {
     echo -e "\n${CYAN}Triggering cleanup of demo resources...${NC}"
-    kubectl delete pod hostpath-demo-pod --force --grace-period=0 --ignore-not-found=true >/dev/null 2>&1
+    kubectl delete pod hostpath-demo-pod inspector-pod target-app --force --grace-period=0 --ignore-not-found=true >/dev/null 2>&1
     echo -e "${GREEN}Cleanup complete. Cluster returned to clean state.${NC}"
 }
 
